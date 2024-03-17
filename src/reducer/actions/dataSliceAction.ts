@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AnyAction, current } from '@reduxjs/toolkit';
 import produce from 'immer';
 import { IBoard, IColumn, ITask } from '../../data/type';
@@ -10,7 +11,6 @@ export const onSetBoardStatus = (state: DataState, action: AnyAction) => {
   const data = current(state.data);
   const currentBoardTab = action.payload;
   const targetBoard = data.find((item) => item.name === currentBoardTab);
-  //TODO fix the code below. mayhbe return {name:item.name, tasks:item.tasks} ?
   const targetBoardStatusArr = targetBoard!.columns!.map((item) => item.name);
   return { ...state, currentBoardStatus: targetBoardStatusArr };
 };

@@ -1,21 +1,20 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useForm, useFieldArray, SubmitHandler } from 'react-hook-form';
-import Modal from '../../standard/Modal';
+import Modal from '../../shared/Modal';
 import { IModal, IColumn, IBoard } from '../../data/type';
 import { Cross } from '../../data/icons';
-import Button from '../../standard/Button';
+import Button from '../../shared/Button';
 import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
 import { addBoard, setBoardStatus } from '../../reducer/dataSlice';
 import { closeModal } from '../../reducer/modalSlice';
 import { setTab } from '../../reducer/boardTabSlice';
-import { hasDuplicates } from '../../helper/util';
+import { hasDuplicates } from '../../helper/utils';
 
 const AddBoard = (props: IModal) => {
   const dispatch = useAppDispatch();
   const {
     register,
     watch,
-    // clearErrors,
     control,
     formState: { errors },
     handleSubmit,
@@ -89,7 +88,6 @@ const AddBoard = (props: IModal) => {
                         validate: (value) => hasDuplicates(value, index, watchFieldArray),
                         required: true,
                       })}
-                      // onClick={() => clearErrors(['columns'])}
                     />
                     {errors.columns?.[index]?.name?.type == 'validate' && (
                       <span className='AddNewTask__label--errText'>Used</span>

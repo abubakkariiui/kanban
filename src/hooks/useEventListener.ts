@@ -1,7 +1,5 @@
 import { RefObject, useEffect, useRef } from 'react';
 
-// See: https://usehooks-ts.com/react-hook/
-
 // Window Event based useEventListener interface
 function useEventListener<K extends keyof WindowEventMap>(
   eventName: K,

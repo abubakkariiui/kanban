@@ -2,8 +2,8 @@ import { IModal } from '../../data/type';
 import { useAppDispatch } from '../../hooks/useRedux';
 import { deleteBoard } from '../../reducer/dataSlice';
 import { closeModal } from '../../reducer/modalSlice';
-import Button from '../../standard/Button';
-import Modal from '../../standard/Modal';
+import Button from '../../shared/Button';
+import Modal from '../../shared/Modal';
 
 const DeleteBoard = (props: IModal) => {
   const { boardTab } = props;

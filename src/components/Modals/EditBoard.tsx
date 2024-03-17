@@ -1,13 +1,13 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useForm, useFieldArray, SubmitHandler } from 'react-hook-form';
-import Modal from '../../standard/Modal';
+import Modal from '../../shared/Modal';
 import { IBoard, IColumn, IModal } from '../../data/type';
 import { Cross } from '../../data/icons';
 import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
 import { editBoard, setBoardStatus } from '../../reducer/dataSlice';
-import Button from '../../standard/Button';
+import Button from '../../shared/Button';
 import { setTab } from '../../reducer/boardTabSlice';
-import { hasDuplicates } from '../../helper/util';
+import { hasDuplicates } from '../../helper/utils';
 import { closeModal } from '../../reducer/modalSlice';
 
 const EditBoard = (props: IModal) => {
@@ -16,13 +16,11 @@ const EditBoard = (props: IModal) => {
   const modalType = useAppSelector((state) => state.modal);
   const boardTab = useAppSelector((state) => state.boardTab);
   const currentBoardData = boardData.data.find((item) => item.name === boardTab);
-  //TODO add a error page?
   if (!currentBoardData) return null;
 
   const {
     register,
     watch,
-    // clearErrors,
     control,
     formState: { errors },
     handleSubmit,

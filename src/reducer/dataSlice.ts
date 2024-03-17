@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   // createAsyncThunk,
   createSlice,
@@ -31,7 +32,6 @@ export const dataSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {
-    //example: (state, action) => return {...state, action.payload}
     hydrate: (state, action) => action.payload,
     toggleTheme: (state, action) => ({ ...state, colorTheme: action.payload }),
     getLocalData: (state, action) => onGetLocalData(state, action),

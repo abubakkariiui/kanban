@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from './Card';
 import type { IColumn } from '../../data/type';
 import { openModal } from '../../reducer/modalSlice';
@@ -36,7 +35,7 @@ const Column = (props: ColumnProps) => {
         </span>
       </div>
       <Droppable droppableId={columnData.id.toString()}>
-        {(droppableProvided, droppableSnapshot) => (
+        {(droppableProvided) => (
           <div
             className={`Column__container ${columnData.tasks?.length ? '' : 'Column__container--empty'}`}
             ref={droppableProvided.innerRef}
@@ -45,7 +44,7 @@ const Column = (props: ColumnProps) => {
             <span style={{ display: 'none' }}>{droppableProvided.placeholder}</span>
             {columnData.tasks?.map((cardData, index) => (
               <Draggable key={cardData.id} draggableId={cardData.id.toString()} index={index}>
-                {(draggableProvided, draggableSnapshot) => <Card cardData={cardData} provided={draggableProvided} />}
+                {(draggableProvided) => <Card cardData={cardData} provided={draggableProvided} />}
               </Draggable>
             ))}
           </div>

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import Modal from '../../standard/Modal';
+import Modal from '../../shared/Modal';
 import { IModal, ISubTask } from '../../data/type';
-import DropDown from '../../standard/DropDown';
+import DropDown from '../../shared/DropDown';
 import { openModal } from '../../reducer/modalSlice';
 import { editTask } from '../../reducer/dataSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
-import CheckBox from '../../standard/CheckBox';
-import SelectDropDown from '../../standard/SelectDropDown';
+import CheckBox from '../../shared/CheckBox';
+import SelectDropDown from '../../shared/SelectDropDown';
 
 const ViewTask = (props: IModal) => {
   const { ModalDetail, boardTab } = props;
@@ -20,7 +20,6 @@ const ViewTask = (props: IModal) => {
     description: ModalDetail.description,
     subtasks: ModalDetail.subtasks.map((item: ISubTask) => ({ title: item.title, isCompleted: item.isCompleted })),
     status: ModalDetail.status,
-    // statusId: ModalDetail.statusId,
   });
   const countCompleted = newTask.subtasks?.filter((item: ISubTask) => item.isCompleted === true);
 

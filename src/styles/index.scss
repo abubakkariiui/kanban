@@ -19,9 +19,9 @@
 @import "./components/Modals/addNewTask";
 @import "./components/Modals/deleteBoard";
 
-//standard
-@import "./standard/checkBox";
-@import "./standard/button";
-@import "./standard/modal";
-@import "./standard/dropDown";
-@import './standard/selectDropDown'
+//shared
+@import "./shared/checkBox";
+@import "./shared/button";
+@import "./shared/modal";
+@import "./shared/dropDown";
+@import './shared/selectDropDown'

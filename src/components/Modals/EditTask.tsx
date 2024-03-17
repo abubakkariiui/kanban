@@ -1,11 +1,11 @@
 import { SubmitHandler, useForm, useFieldArray } from 'react-hook-form';
 import { IModal, ISubTask, ITask } from '../../data/type';
-import Modal from '../../standard/Modal';
+import Modal from '../../shared/Modal';
 import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
 import { editTask } from '../../reducer/dataSlice';
 import { Cross } from '../../data/icons';
-import Button from '../../standard/Button';
-import SelectDropDown from '../../standard/SelectDropDown';
+import Button from '../../shared/Button';
+import SelectDropDown from '../../shared/SelectDropDown';
 import { closeModal } from '../../reducer/modalSlice';
 
 const EditTask = (props: IModal) => {

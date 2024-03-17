@@ -1,8 +1,8 @@
 import { useAppSelector, useAppDispatch } from '../../hooks/useRedux';
 import { IModal, ISubTask, ITask } from '../../data/type';
-import SelectDropDown from '../../standard/SelectDropDown';
-import Modal from '../../standard/Modal';
-import Button from '../../standard/Button';
+import SelectDropDown from '../../shared/SelectDropDown';
+import Modal from '../../shared/Modal';
+import Button from '../../shared/Button';
 import { Cross } from '../../data/icons';
 
 import { addTask } from '../../reducer/dataSlice';

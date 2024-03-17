@@ -1,8 +1,8 @@
 import { useState, MouseEvent } from 'react';
-import Button from '../../standard/Button';
+import Button from '../../shared/Button';
 import { openModal } from '../../reducer/modalSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks/useRedux';
-import DropDown from '../../standard/DropDown';
+import DropDown from '../../shared/DropDown';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { ChevronDown, IconPlus } from '../../data/icons';
 import SideNav from '../SideNav';
